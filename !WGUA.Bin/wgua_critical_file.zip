@@ -1,0 +1,1 @@
+This is a critical resource file used by WatchGuard Universal Agent for detection and prevention of active malware. Please do not delete, modify, or create any new files within this directory. Doing so may cause your system to become unstable.
