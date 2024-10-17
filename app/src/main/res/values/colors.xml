@@ -2,4 +2,6 @@
 <resources>
     <color name="VerdePrincipal">#94A21B</color>
     <color name="BrancoPrincipal">#F5F5F5</color>
+    <color name="AzulPrincipal">#3EADA4</color>
+    <color name="CinzaPrincipal">#D9D9D9</color>
 </resources>

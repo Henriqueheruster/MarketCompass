@@ -15,20 +15,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    
     <Button
-        android:id="@+id/btnComecar"
-        android:layout_width="289dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="596dp"
-        android:background="@color/VerdePrincipal"
-        android:text="COMEÇAR"
-        android:textColor="@color/BrancoPrincipal"
-        android:textColorHint="@color/BrancoPrincipal"
-        android:textSize="48sp"
-        android:radius="500dp"
-        app:layout_constraintStart_toStartOf="@+id/space"
-        app:layout_constraintTop_toTopOf="@+id/space" />
+            android:id="@+id/btnComecar"
+            android:layout_width="360dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="600dp"
+            android:background="@drawable/botao_iniciar"
+            android:text="COMEÇAR"
+            android:textColor="@color/BrancoPrincipal"
+            android:textColorHint="@color/BrancoPrincipal"
+            android:textSize="48sp"
+            android:radius="500dp"
+            app:layout_constraintStart_toStartOf="@+id/space"
+            app:layout_constraintTop_toTopOf="@+id/space" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
