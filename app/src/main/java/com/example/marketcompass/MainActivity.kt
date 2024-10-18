@@ -14,19 +14,11 @@ class MainActivity : Activity(){
         super.onCreate(savedInstanceState)
         setContentView(activity_main)
 
-        val meuGiff : ImageView = findViewById(R.id.img_carregando)
-
-        val gifLocal = "@drawable/giffcarregamento"
-
-        Glide.with(this)
-            .load(gifLocal)
-            .into(meuGiff)
-
         Handler().postDelayed({
             val acao = Intent(this, TelaComecar::class.java)
             startActivity(acao)
             finish()
-        }, 3000)
+        }, 1000)
     }
 
 }

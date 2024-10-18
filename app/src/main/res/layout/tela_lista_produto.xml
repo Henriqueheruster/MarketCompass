@@ -8,12 +8,11 @@
 	
 	<View
 			android:layout_width="429dp"
-			android:layout_height="684dp"
+			android:layout_height="wrap_content"
 			android:id="@+id/view3"
-			tools:layout_editor_absoluteX="-9dp"
 			app:layout_constraintTop_toTopOf="parent"
 			android:layout_marginTop="64dp"
-			android:background="@color/AzulPrincipal" />
+			android:background="@color/AzulPrincipal" app:layout_constraintStart_toStartOf="parent"/>
 	
 	<TextView
 			android:text="Lista de Compras"
@@ -42,14 +41,14 @@
 			
 			<Button
 					android:layout_width="63dp"
-					android:layout_height="47dp"
+					android:layout_height="63dp"
 					android:background="@drawable/botao_add_produto"
 					android:id="@+id/button"
 					app:layout_constraintTop_toTopOf="parent"
-					android:layout_marginTop="416dp"
+					android:layout_marginTop="384dp"
 					app:layout_constraintEnd_toEndOf="parent"
-					android:layout_marginEnd="16dp" />
-			
+					android:layout_marginEnd="24dp" android:contentDescription="adiciona produtos" android:text="+"
+					android:textStyle="bold" android:textSize="48sp"/>
 			<TextView
 					android:text="A Lista de Compras está vazia, clique no +  para adicionar um produto a lista."
 					android:layout_width="265dp"
@@ -60,7 +59,7 @@
 					app:layout_constraintTop_toTopOf="parent"
 					app:layout_constraintEnd_toEndOf="parent"
 					android:layout_marginEnd="20dp"
-					android:layout_marginTop="16dp" />
+					android:layout_marginTop="16dp" android:textStyle="bold"/>
 		</androidx.constraintlayout.widget.ConstraintLayout>
 	
 	</androidx.cardview.widget.CardView>
@@ -69,7 +68,7 @@
 			android:text="LOCALIZAR"
 			android:layout_width="292dp"
 			android:layout_height="48dp"
-			android:id="@+id/button2"
+			android:id="@+id/localizar"
 			android:background="@drawable/botao_add_produto"
 			android:textSize="24sp"
 			android:textStyle="bold"
@@ -87,7 +86,7 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			android:layout_marginTop="4dp"
-			android:layout_marginStart="236dp" />
+			android:layout_marginStart="236dp" android:contentDescription="foto mercado"/>
 	
 	<TextView
 			android:text="Mercado 1"
@@ -101,11 +100,11 @@
 			android:textStyle="bold" />
 	
 	<ImageButton
-			android:layout_width="54dp"
-			android:layout_height="43dp"
+			android:layout_width="59dp"
+			android:layout_height="55dp"
 			app:srcCompat="?android:attr/actionModeCloseDrawable"
 			android:id="@+id/imageButton2"
-			tools:layout_editor_absoluteY="7dp"
-			tools:layout_editor_absoluteX="10dp"
-			android:background="@drawable/icone_imagem_redondo" />
+			android:background="@drawable/icone_imagem_redondo" app:layout_constraintTop_toTopOf="parent"
+			android:layout_marginTop="7dp" app:layout_constraintStart_toStartOf="parent"
+			android:layout_marginStart="10dp" android:contentDescription="Voltar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

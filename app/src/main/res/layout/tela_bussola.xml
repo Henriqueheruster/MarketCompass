@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/AzulPrincipal"
+>
+	
+	<View
+			android:layout_width="wrap_content"
+			android:layout_height="60dp" android:id="@+id/view"
+			app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+			android:background="@color/VerdePrincipal"/>
+	<View
+			android:layout_width="wrap_content"
+			android:layout_height="60dp" android:id="@+id/view2"
+			android:background="@color/VerdePrincipal"
+			app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+	<View
+			android:layout_width="35dp"
+			android:layout_height="35dp" android:id="@+id/view5"
+			android:background="@drawable/produto_bussola"
+			app:layout_constraintBottom_toBottomOf="@+id/barraDeProdutos"
+			app:layout_constraintTop_toTopOf="@+id/barraDeProdutos" android:layout_marginEnd="48dp"
+			app:layout_constraintEnd_toEndOf="@+id/barraDeProdutos"/>
+	<ImageButton
+			android:layout_width="59dp"
+			android:layout_height="55dp"
+			app:srcCompat="?android:attr/actionModeCloseDrawable"
+			android:id="@+id/btnVoltar"
+			android:background="@drawable/icone_imagem_redondo" app:layout_constraintTop_toTopOf="parent"
+			android:layout_marginTop="7dp" app:layout_constraintStart_toStartOf="parent"
+			android:layout_marginStart="10dp" android:contentDescription="Voltar"/>
+	<View
+			android:layout_width="150dp"
+			android:layout_height="150dp" android:id="@+id/seta"
+			app:layout_constraintStart_toStartOf="parent"
+			android:layout_marginStart="128dp" app:layout_constraintTop_toTopOf="@+id/view"
+			android:layout_marginTop="288dp" android:background="@drawable/backtela" android:backgroundTint="#CC0D0D"
+			android:rotation="-245"/>
+	<View
+			android:layout_width="wrap_content"
+			android:layout_height="64dp" android:id="@+id/barraDeProdutos"
+			app:layout_constraintBottom_toTopOf="@+id/seta"
+			android:layout_marginBottom="32dp"
+			app:layout_constraintTop_toBottomOf="@+id/view" app:layout_constraintVertical_bias="1.0"
+			app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="32dp"/>
+	<View
+			android:layout_width="50dp"
+			android:layout_height="50dp" android:id="@+id/produtoAtual"
+			android:background="@drawable/produto_bussola"
+			app:layout_constraintTop_toTopOf="@+id/barraDeProdutos"
+			app:layout_constraintBottom_toBottomOf="@id/barraDeProdutos"
+			app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="180dp"
+			app:layout_constraintVertical_bias="1.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

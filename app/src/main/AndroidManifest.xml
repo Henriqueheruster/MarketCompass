@@ -22,6 +22,8 @@
         </activity>
 	    <activity android:name=".TelaComecar"></activity>
 	    <activity android:name=".TelaMercado"></activity>
+	    <activity android:name=".TelaLista"></activity>
+	    <activity android:name=".TelaBussola"></activity>
 	    <meta-data
 			    android:name="preloaded_fonts"
 			    android:resource="@array/preloaded_fonts" />
