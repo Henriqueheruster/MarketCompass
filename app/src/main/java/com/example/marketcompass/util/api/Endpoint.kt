@@ -9,7 +9,7 @@ import retrofit2.http.Path
 
 interface Endpoint {
     @GET("mercadosJson")
-    fun getMercado() : Call<JsonArray>
+    fun getMercado() : Call<MutableList<mercados>>
 
     @GET("/produtosMercado/{id}")
     fun getCurrentRate(@Path(value = "id", encoded = true)from:String) : Call<mercados>
