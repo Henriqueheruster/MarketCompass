@@ -2,20 +2,23 @@ package com.example.marketcompass
 
 import android.app.Activity
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.marketcompass.R.layout.tela_mercados
+import com.example.marketcompass.createCompenents.MarketAdapter
+import com.example.marketcompass.createCompenents.MarketViewHolder
 import com.example.marketcompass.dados.mercados
 import com.example.marketcompass.util.NetworkUtils
 import com.example.marketcompass.util.api.Endpoint
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 
@@ -24,13 +27,19 @@ import retrofit2.Response
 class TelaMercado:Activity() {
 
     private var listaMercados: MutableList<mercados> = mutableListOf()
+    private lateinit var marketRecyclerView: RecyclerView
+    private lateinit var marketAdapter: MarketAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(tela_mercados)
         Log.d("Retorno",getMercado().toString())
         Log.d("Atributo",listaMercados.toString())
-        val btnDoMercado : CardView = findViewById(R.id.mercado1)
+
+        marketRecyclerView = findViewById(R.id.marketRecyclerView)
+        marketRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        val btnDoMercado : ScrollView = findViewById(R.id.PAIDOTREM)
         btnDoMercado.setOnClickListener{
             val intencao : Intent = Intent(this, TelaLista::class.java)
             startActivity(intencao)
@@ -44,24 +53,19 @@ class TelaMercado:Activity() {
         endpoint.getMercado().enqueue(object : Callback<MutableList<mercados>>{
 
             override fun onResponse(call: Call<MutableList<mercados>>, response: Response<MutableList<mercados>>) {
-                var  tela :ConstraintLayout = findViewById(R.id.tela_mercados)
-                var cardAtual: CardView
-                var cardModelo : CardView = findViewById(R.id.mercado1)
-                var imgAtual : ImageView
-                var  textoDoCardAtual : TextView
 
-                //colocar mercados na tela
+                if (response.isSuccessful) {
+
+                    val mercados = response.body() ?: listOf()
+                    marketAdapter = MarketAdapter(mercados)
+                    marketRecyclerView.adapter = marketAdapter
+                }
+
+               val paidotrem : ScrollView = findViewById(R.id.PAIDOTREM)
+                val trem : ViewHolder? = marketRecyclerView.adapter!!?.onCreateViewHolder(paidotrem,1)
+
                 for (i in 0..response.body()!!.count()){
-                    cardAtual = CardView(this@TelaMercado )
-
-
-
-                    imgAtual = ImageView(this@TelaMercado)
-                    textoDoCardAtual = TextView(this@TelaMercado)
-
-                    cardAtual.addView(imgAtual)
-                    cardAtual.addView(textoDoCardAtual)
-                    tela.addView(cardAtual)
+                    trem
                 }
             }
 

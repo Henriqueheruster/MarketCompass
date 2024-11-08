@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="304dp"
+		android:layout_height="159dp"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:background="@color/VerdePrincipal"
+		app:cardBackgroundColor="@color/VerdePrincipal"
+		android:layout_marginTop="94dp"
+		app:layout_constraintTop_toTopOf="@+id/textView"
+		android:layout_marginEnd="64dp"
+		app:layout_constraintEnd_toEndOf="@+id/view"
+		android:id="@+id/modeloMercado"
+		>
+	
+	<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp">
+		
+		
+		<!-- Text View para o nome do Mercado -->
+		<ImageView
+				android:layout_width="306dp"
+				android:layout_height="109dp"
+				app:srcCompat="@android:drawable/screen_background_light"
+				android:id="@+id/imgMercado1"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				android:layout_marginTop="4dp" />
+		
+		<TextView
+				android:text=""
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/modelTextView"
+				android:textSize="24sp"
+				android:gravity="center"
+				android:textStyle="bold"
+				app:layout_constraintTop_toTopOf="parent"
+				android:layout_marginTop="128dp"
+				app:layout_constraintStart_toStartOf="@+id/imgMercado1"
+				android:layout_marginStart="92dp" />
+	
+	</LinearLayout>
+</androidx.cardview.widget.CardView>
