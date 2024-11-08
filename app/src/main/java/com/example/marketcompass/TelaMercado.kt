@@ -1,21 +1,19 @@
 package com.example.marketcompass
 
 import android.app.Activity
-import android.content.Intent
-import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.marketcompass.R.layout.tela_mercados
 import com.example.marketcompass.dados.mercados
+import com.example.marketcompass.factory.FabricaCards
 import com.example.marketcompass.util.NetworkUtils
 import com.example.marketcompass.util.api.Endpoint
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 
@@ -28,13 +26,17 @@ class TelaMercado:Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(tela_mercados)
-        Log.d("Retorno",getMercado().toString())
-        Log.d("Atributo",listaMercados.toString())
-        val btnDoMercado : CardView = findViewById(R.id.mercado1)
-        btnDoMercado.setOnClickListener{
-            val intencao : Intent = Intent(this, TelaLista::class.java)
-            startActivity(intencao)
-        }
+        val paiCards = findViewById<LinearLayout>(R.id.paiMercados)
+        val fb_cards = FabricaCards(this@TelaMercado,mercados(1,"incrivel", "url"), paiCards)
+        fb_cards.desenhar()
+        fb_cards.setMercado(mercados(2, "shooooow", "C:/Users/User01/Pictures/patonautaaaaaa.jpg"))
+        fb_cards.desenhar()
+        fb_cards.desenhar()
+        fb_cards.desenhar()
+        fb_cards.desenhar()
+        fb_cards.desenhar()
+
+
     }
 
     fun getMercado(): Call<MutableList<mercados>> {
@@ -46,7 +48,7 @@ class TelaMercado:Activity() {
             override fun onResponse(call: Call<MutableList<mercados>>, response: Response<MutableList<mercados>>) {
                 var  tela :ConstraintLayout = findViewById(R.id.tela_mercados)
                 var cardAtual: CardView
-                var cardModelo : CardView = findViewById(R.id.mercado1)
+
                 var imgAtual : ImageView
                 var  textoDoCardAtual : TextView
 
