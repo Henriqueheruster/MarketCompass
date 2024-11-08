@@ -20,6 +20,9 @@ class MarketAdapter (private val mercados: List<mercados>) : RecyclerView.Adapte
         Picasso.get().load(mercado.imagem).into(holder.marketImage)
     }
 
+
+
+
     override fun getItemCount(): Int = mercados.size
 
 }
